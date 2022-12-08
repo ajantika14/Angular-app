@@ -1,3 +1,5 @@
+@import '~bootstrap-icons/font/bootstrap-icons.css';
+
 .bgPage{
   background-color: #e8e8e8;
   color: rgb(97, 74, 119);
@@ -7,8 +9,20 @@
 background-color: red;
 border-radius: 10px;
 border: 2px solid brown;
+color: black;
 }
 
 .ng-touched .ng-invalid{
 border:1px solid red;
+}
+.plus{
+font-size: 26px;
+font-weight: bolder;
+}
+
+.ResetBtn{
+background-color: chartreuse;
+color: black;
+border-radius: 10px;
+border: 2px solid brown;
 }

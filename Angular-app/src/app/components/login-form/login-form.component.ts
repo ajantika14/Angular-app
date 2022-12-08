@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {FormGroup, FormControl, FormBuilder,Validators,FormArray} from '@angular/forms'
+import {FormGroup, FormControl,Validators,FormArray} from '@angular/forms'
+import { CustomValidations } from 'src/app/classes/custom.validations';
 @Component({
   selector: 'app-login-form',
   templateUrl: './login-form.component.html',
@@ -7,6 +8,14 @@ import {FormGroup, FormControl, FormBuilder,Validators,FormArray} from '@angular
 })
 export class LoginFormComponent implements OnInit {
   userForm: FormGroup;
+  get name(){
+    return this.userForm.get('name');
+  }
+
+get username(){
+  return this.userForm.get('username');
+}
+
   constructor() { }
 
   ngOnInit(): void {
@@ -15,9 +24,8 @@ export class LoginFormComponent implements OnInit {
         Validators.required,
         Validators.minLength(8),
         Validators.maxLength(20),
-        Validators.pattern('Mantosh Singh')
       ]),
-      username: new FormControl('ajantika'),
+      username: new FormControl('ajantika', CustomValidations.unique),
       email: new FormControl('ajantika@email.com'),
       phone: new FormControl('0000000000'),
       website: new FormControl('www.gibinzz.com'),
@@ -36,10 +44,28 @@ export class LoginFormComponent implements OnInit {
         catchPhrase: new FormControl('Get the best always'),
         bs: new FormControl('Great colleagues here'),
       }),
+      hobbies: new FormArray([])
 
-    })
+    });
+  }
+
+  addHobby(){
+    (<FormArray>this.userForm.get('hobbies')).push(new FormControl(''));
+
+  }
+
+  get userFormHobbies () {
+    return this.userForm.get('hobbies') as FormArray;
   }
   onSubmit(){
 
+  }
+
+  deleteHobby(index:any){
+ (<FormArray>this.userForm.get('hobbies')).removeAt(index);
+  }
+
+  reset(){
+    this.userForm.reset();
   }
 }
