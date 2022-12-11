@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {FormGroup, FormControl,Validators,FormArray} from '@angular/forms'
 import { CustomValidations } from 'src/app/classes/custom.validations';
+import { IUsers } from '../user';
+
 @Component({
   selector: 'app-login-form',
   templateUrl: './login-form.component.html',
@@ -58,7 +60,10 @@ get username(){
     return this.userForm.get('hobbies') as FormArray;
   }
   onSubmit(){
-
+    if(!this.userForm.valid){
+      return;
+    }
+  console.log(this.userForm.value)
   }
 
   deleteHobby(index:any){
