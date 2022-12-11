@@ -1,1 +1,14 @@
-<p>user-list works!</p>
+<div class="container">
+    <div class="col-md-4">
+<h3 class="heading">Users</h3>
+<ul class="list-group">
+    <li *ngFor="let user of users; last as lastElement" class="list-group-item">
+    <app-user [user]="user"></app-user>
+     <p *ngIf="!lastElement" class ="bi bi-arrow-down-square-fill"></p>
+    </li>
+</ul>
+</div>
+<div class="col-md-8">
+    <router-outlet></router-outlet>
+    </div>
+</div>

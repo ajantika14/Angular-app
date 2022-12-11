@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+// import { BrowserModule } from '@angular/platform-browser';
+// import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
-
+import {BrowserModule} from '@angular/platform-browser';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,6 +12,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginFormComponent } from './components/login-form/login-form.component';
 import { UserListComponent } from './components/user-list/user-list.component';
+import { UserComponent } from './components/user/user.component';
+import { UserDetailsComponent } from './components/user-details/user-details.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,9 @@ import { UserListComponent } from './components/user-list/user-list.component';
     NavbarComponent,
     HomeComponent,
     LoginFormComponent,
-    UserListComponent
+    UserListComponent,
+    UserComponent,
+    UserDetailsComponent
   ],
   imports: [
     BrowserModule,
