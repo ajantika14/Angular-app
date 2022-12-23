@@ -14,6 +14,7 @@ import { LoginFormComponent } from './components/login-form/login-form.component
 import { UserListComponent } from './components/user-list/user-list.component';
 import { UserComponent } from './components/user/user.component';
 import { UserDetailsComponent } from './components/user-details/user-details.component';
+import { ChatComponent } from './chatbot/chat/chat.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { UserDetailsComponent } from './components/user-details/user-details.com
     LoginFormComponent,
     UserListComponent,
     UserComponent,
-    UserDetailsComponent
+    UserDetailsComponent,
+    ChatComponent
   ],
   imports: [
     BrowserModule,

@@ -1,3 +1,4 @@
+import { ChatComponent } from './chatbot/chat/chat.component';
 import { UserDetailsComponent } from './components/user-details/user-details.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router'
@@ -11,6 +12,7 @@ const routes: Routes = [
   {path:'Users', component:UserListComponent, children:[
     {path:':id', component:UserDetailsComponent}
   ]},
+  {path:'toshika', component:ChatComponent},
   {path:'**', component:HomeComponent, pathMatch:'full'}
 ];
 

@@ -1,0 +1,17 @@
+<div class="container">
+<ng-container *ngFor="let message of messages">
+    <div class="message" [ngClass]="{from: message.author === 'bot',to: message.author === 'user'}">
+      {{ message.content }}
+    </div>
+  </ng-container>
+  <label class="head" *ngIf="messages.length == 0; else dialogInfo" for="nameField">Talk to Toshika</label>
+  <div>
+     <input [(ngModel)]="value" (keyup.enter)="sendMessage()" type="text" />
+     <span>
+     <button (click)="sendMessage()">Send</button>
+    </span>
+  </div>
+  <ng-template #dialogInfo>
+    <span [className]="'float-right'">Total messages: {{ messages.length }}</span>
+  </ng-template>
+</div>
