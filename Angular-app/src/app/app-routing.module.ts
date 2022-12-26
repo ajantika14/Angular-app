@@ -5,6 +5,7 @@ import { RouterModule, Routes } from '@angular/router'
 import { HomeComponent } from './components/home/home.component';
 import { LoginFormComponent } from './components/login-form/login-form.component';
 import { UserListComponent } from './components/user-list/user-list.component';
+import { ToDoComponent } from './Todo/to-do/to-do.component';
 
 const routes: Routes = [
   {path:'home', component:HomeComponent},
@@ -13,6 +14,7 @@ const routes: Routes = [
     {path:':id', component:UserDetailsComponent}
   ]},
   {path:'toshika', component:ChatComponent},
+  {path:'to-do', component:ToDoComponent},
   {path:'**', component:HomeComponent, pathMatch:'full'}
 ];
 
