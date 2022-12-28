@@ -18,7 +18,11 @@ export class UserListComponent implements OnInit {
   getUsers(){
     this.users = this.service.getUsers().subscribe(res=>{
       this.users = res;
+      this.sorted()
       });
   }
 
+  sorted(){
+    this.users.sort((a:any,b:any)=>(a.name > b.name ? 1:-1))
+  }
 }

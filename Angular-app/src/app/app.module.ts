@@ -16,6 +16,7 @@ import { UserComponent } from './components/user/user.component';
 import { UserDetailsComponent } from './components/user-details/user-details.component';
 import { ChatComponent } from './chatbot/chat/chat.component';
 import { ToDoComponent } from './Todo/to-do/to-do.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,7 @@ import { ToDoComponent } from './Todo/to-do/to-do.component';
     UserComponent,
     UserDetailsComponent,
     ChatComponent,
-    ToDoComponent
+    ToDoComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,6 +36,7 @@ import { ToDoComponent } from './Todo/to-do/to-do.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    NgbModule,
     MDBBootstrapModule.forRoot()
   ],
   providers: [],

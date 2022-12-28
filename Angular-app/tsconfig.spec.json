@@ -5,7 +5,8 @@
     "outDir": "./out-tsc/spec",
     "resolveJsonModule": true,
     "types": [
-      "jasmine"
+      "jasmine",
+      "@angular/localize"
     ]
   },
   "files": [
