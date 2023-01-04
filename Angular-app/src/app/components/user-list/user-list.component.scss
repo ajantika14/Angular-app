@@ -3,5 +3,13 @@
     flex-wrap: wrap;
     font-size: large;
     font-weight: bold;
-    color: cadetblue;
+
+
+    &-userSearch{
+        color: red;
+    }
+
+    &-userList{
+        color: cadetblue;
+    }
 }

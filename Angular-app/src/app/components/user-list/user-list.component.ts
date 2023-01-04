@@ -9,6 +9,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserListComponent implements OnInit {
   users: any = [];
+  SearchUser ='';
+  searchedUsers = [];
   constructor(private service: UserListService) { }
 
   ngOnInit() {
@@ -19,10 +21,22 @@ export class UserListComponent implements OnInit {
     this.users = this.service.getUsers().subscribe(res=>{
       this.users = res;
       this.sorted()
+      return this.users;
       });
   }
 
   sorted(){
     this.users.sort((a:any,b:any)=>(a.name > b.name ? 1:-1))
+  }
+
+  onType(event:any){
+    console.log(event.target.value)
+  }
+
+  searchText(){
+    this.searchedUsers = this.users;
+    this.searchedUsers = this.searchedUsers.filter((res:any)=>{
+       return res.name.toLocaleLowerCase().match(this.users.name.toLocaleLowerCase())
+    })
   }
 }

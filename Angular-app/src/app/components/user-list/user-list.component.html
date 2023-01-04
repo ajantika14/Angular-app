@@ -1,6 +1,10 @@
 <div class="container">
+    <div>
+        <h3 class="heading-userSearch mt-3">Search the User</h3>
+        <input class="form-control mt-1 mb-2" type="search" placeholder="Search User" aria-label="Search" [(ngModel)]="SearchUser" (input)="searchText()" autofocus>
+    </div>
     <div class="col-md-4">
-<h3 class="heading">Users</h3>
+<h3 class="heading-userList">Users</h3>
 <ul class="list-group">
     <li *ngFor="let user of users; last as lastElement" class="list-group-item">
     <app-user [user]="user"></app-user>
